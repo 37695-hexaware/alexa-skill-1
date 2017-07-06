@@ -59,7 +59,7 @@ function getWelcomeResponse(callback) {
 }
 
 
-function getHelloWorld(callback){
+function getHelloWorld(intent, session, callback){
     const sessionAttributes = {};
     const cardTitle = 'Hello World';
     const speechOutput = 'Welcome to Hello World.';
