@@ -130,11 +130,6 @@ function onSessionEnded(sessionEndedRequest, session) {
     // Add cleanup logic here
 }
 
-function callback(error, response){
-    res.json(response);
-    return true;
-}
-
 restService.post('/hook', function (req, res) {
 
     console.log('hook request');
@@ -162,6 +157,11 @@ restService.post('/hook', function (req, res) {
     } else if (event.request.type === 'SessionEndedRequest') {
         onSessionEnded(event.request, event.session);
         callback();
+    }
+    
+    function callback(error, response){
+        res.json(response);
+        return true;
     }
 
 });
