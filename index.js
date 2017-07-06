@@ -130,18 +130,18 @@ function onSessionEnded(sessionEndedRequest, session) {
     // Add cleanup logic here
 }
 
+function callback(error, response){
+    res.json(response);
+    return true;
+}
 
 restService.post('/hook', function (req, res) {
 
     console.log('hook request');
-    
-    console.log(req);
-
-    function callback(error, response){
-        res.json(response);
-    }
 
     let event = req.body;
+
+    console.log(event);
 
     if (event.session.new) {
         onSessionStarted({ requestId: event.request.requestId }, event.session);
