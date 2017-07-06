@@ -138,6 +138,8 @@ restService.post('/hook', function (req, res) {
 
     console.log(event);
 
+    res.json(event);
+
     if (event.session.new) {
         onSessionStarted({ requestId: event.request.requestId }, event.session);
     }
