@@ -134,6 +134,8 @@ function onSessionEnded(sessionEndedRequest, session) {
 restService.post('/hook', function (req, res) {
 
     console.log('hook request');
+    
+    console.log(req);
 
     function callback(error, response){
         res.json(response);
